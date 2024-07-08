@@ -10,7 +10,7 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-4">
+    <div class="col-6">
         <div class="row">
             <div class="col-4">
                 <h4> {{courseName}} </h4><!--Interpolation-->
@@ -23,14 +23,25 @@
                 <div [class]=myClassName>Danger</div>
                 <input [type]="textInputType" [value]="courseName" placeholder="Enter course name" />
             </div>
+            <div class="col-4">
+                <button class="btn btn-success" (click)="showAlert('welcome Angular 18')">Show Welcome</button>
+                <span (click)="showAlert('welcome Angular 18')">click me</span>
+                <button class="btn btn-success" (click)="changeCourseName()">Change Course</button>
+            </div>
         </div>
     </div>
-    <div class="col-4">
-        <button class="btn btn-success" (click)="showAlert('welcome Angular 18')">Show Welcome</button>
-        <span (click)="showAlert('welcome Angular 18')">click me</span>
-        <button class="btn btn-success" (click)="changeCourseName()">Change Course</button>
-    </div>
-    <div class="col-4">
+    <div class="col-6">
+        <input type="text" [(ngModel)]="courseName"/> - {{courseName}}
+        <input type="checkbox" [(ngModel)]="isIndian"/>
+        <select [(ngModel)]="stateName">
+            <option value="">Select</option>
+            <option value="Maharastra">Maharastra</option>
+            <option value="Goa">Goa</option>
+            <option value="MP">MP</option>
 
+        </select>
+    </div>
+    <div class="col-6">
+        <h2>{{firstName()}}</h2>
     </div>
 </div>
