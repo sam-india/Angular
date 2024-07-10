@@ -1,0 +1,53 @@
+<p>structural-dir works!</p>
+<div class="mt-2 p-2 bg-secondary text-white rounded">
+    <h1>Attribute directives</h1>
+    <p>*ngClass *ngStyle ...</p>
+</div>  
+<div class="row pt-3">
+    <div class="col-3">
+        <div class="p-3 text-center" [ngClass]="div1BgColor">
+            <h4>Div 1</h4>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="bg-success p-3 text-center" [ngClass]="isDiv2Active ? 'bg-success' : 'bg-warning'">
+            <h4>Div 2</h4>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="p-3 text-center" [ngClass]="num1==num2 ? 'bg-secondary' :'bg-danger'">
+            <h4>Div 3</h4>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="p-3 text-center"  [ngClass]="isActive ? 'bg-primary'  : ''">
+            <h4>Div 4</h4>
+        </div>
+    </div>
+</div>
+<div class="row pt-3">
+    <div class="col-3 text-center">
+        <button class="btn btn-danger" (click)="changeDiv1BgToRed()">Red</button>
+        <button class="btn btn-primary mx-2"(click)="changeDiv1BgToBlue()">Blue</button>
+    </div>
+    <div class="col-3 text-center">
+        <button class="btn btn-success" (click)="changeIsActive()">Toggle</button>
+    </div>
+    <div class="col-3">
+        <div style="display: flex;align-items:center">
+            <input type="text" [(ngModel)]="num1" placeholder="Num-1" class="width-50">
+            <input type="text" [(ngModel)]="num2" placeholder="Num-2" class="width-50">
+        </div>
+    </div>
+    <div class="col-3">
+        <div style="display: flex;align-items:center" class="width-50">
+            <input type="checkbox"  [(ngModel)]="isActive">
+            <select>
+                <option value="">Select State</option>
+                <option value="India">India</option>
+                <option value="Singapore">Singapore</option>
+                <option value="USA">USA</option>
+            </select>
+        </div>
+    </div>
+</div>
