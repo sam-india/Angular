@@ -2,6 +2,8 @@
 <div class="mt-2 p-2 bg-secondary text-white rounded">
     <h1>Attribute directives</h1>
     <p>*ngClass *ngStyle ...</p>
+    <button class="btn btn-primary"  [routerLink]="['/structural-dir']">Goto Structure</button>
+    <!-- <button class="btn btn-primary"  routerLink="/structural-dir">Goto Structure</button> routerLink import is required--> 
 </div>  
 <div class="row pt-3">
     <div class="col-3">
@@ -22,6 +24,11 @@
     <div class="col-3">
         <div class="p-3 text-center"  [ngClass]="isActive ? 'bg-primary'  : ''">
             <h4>Div 4</h4>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="p-3 text-center" [ngStyle]="customerStyle" [ngClass]="isActive ? 'bg-primary'  : ''">
+            <h4>Div 5</h4>
         </div>
     </div>
 </div>
@@ -49,5 +56,38 @@
                 <option value="USA">USA</option>
             </select>
         </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-5">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Sr No.</th>
+                    <th>Name</th>
+                    <th>City</th>                    
+                    <th>gender</th>
+                    <th>total Marks</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let student of studentList; let sr = index" >
+                    <td>{{sr}}</td>
+                    <td>{{student.name}}</td>
+                    <td>{{student.city}}</td>
+                    <td>{{student.gender}}</td>
+                    <td>
+                        <div class="progress">
+                            <div class="progress-bar" [ngStyle]="{'width':student.totalMarks+'%'}">{{student.totalMarks}}</div>
+                        </div>
+                    </td>
+                    <td [ngStyle]="{'background-color': student.isActive  ? 'yellow' : 'red'}">
+                        <span>{{student.isActive ? 'Active' : 'Deactive'}}</span>
+                    </td>
+                    
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>

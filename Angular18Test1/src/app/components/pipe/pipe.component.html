@@ -1,0 +1,58 @@
+<p>structural-dir works!</p>
+<div class="mt-2 p-2 bg-secondary text-white rounded">
+    <h1>Pipe in angular</h1>
+    <p>Default and custom pipe in angular</p>
+</div>
+<div class="row">
+    <div class="col-3">
+        Original Value - {{firstName}}
+        <br/>
+        After Pipe - {{firstName | uppercase}}
+     </div>
+     <div class="col-3">
+        Original Value - {{firstName}}
+        <br/>
+        After Pipe - {{firstName | lowercase}}
+     </div>
+     <div class="col-3">
+        Original Value - {{secondStr}}
+        <br/>
+        After Pipe - {{secondStr | titlecase}}
+     </div>
+</div>
+<div class="row pt-3">
+    <div class="col-3">
+        Original Value - {{currentDate}}
+        <br/>
+        After Pipe - {{currentDate|date}} 
+     </div>
+     <div class="col-3">
+        Original Value - {{currentDate}}
+        <br/>
+        After Pipe - {{currentDate|date:'dd-MM-yy'}}   
+     </div>
+     <div class="col-3">
+        Original Value - {{currentDate|date:'dd-MMM-yy'}}   
+        <br/>
+        After Pipe - {{currentDate|date:'dd/MM/yy'}}   
+     </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        Original Value - {{student}}   
+        <br/>
+        After Pipe - {{student|json}}
+    </div>
+    <div class="col-3">
+        currentTime Value - {{currentTime}}   
+        <br/>
+        After Pipe  - {{currentTime|async|date:'hh:MM:ss'}} <!-- Order of execution is left to right/ This process also called chaining of pipe-->
+    </div>
+</div>
+<div class="row pt-3">
+    <div class="col-3">
+        Original Value - {{student.state}}   
+        <br/>
+        After Pipe - {{student.state | na}}
+    </div>
+</div>
