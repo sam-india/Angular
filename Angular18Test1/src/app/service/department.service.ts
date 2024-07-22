@@ -11,6 +11,6 @@ export class DepartmentService {
   }
 
   getAllDepartment(){
-    return this.http.get(""https://projectapi.gerasim.in/api/Complaint/GetParentDepartment"");
+    return this.http.get("https://projectapi.gerasim.in/api/Complaint/GetParentDepartment");
   }
 }
