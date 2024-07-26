@@ -1,4 +1,5 @@
 <div class="row">
+    <app-alert [alertType]="'Warning'" [message]="'Welcome to Get page'"></app-alert>
     <div class="col-2">
         <button class="btn btn-success" (click)="getAllUSers()">Get Users</button>
         <div class="btn btn-success" (click)="getAllCustomer()">Get Customers</div>
@@ -10,4 +11,5 @@
             }
         </select>
     </div>
+    <app-alert [alertType]="'Error'" [message]="'Some error'"></app-alert>
 </div>

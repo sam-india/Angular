@@ -2,6 +2,8 @@
     <h4>Post API</h4>
     <h3>Create Department using post, Load dept using get</h3>
 </div>
+<app-alert [alertType]="'Success'" [message]="' Welcome to post page!!'"></app-alert>
+<app-my-button (onBtnClick)="getData($event)" [buttonClass]="'btn btn-success'" [buttonText]="'Success'"></app-my-button>
 <div class="row pt-2">
     <div class="col-8">
         <div class="card">
@@ -28,7 +30,8 @@
                                     <td>{{item.departmentLogo}}</td>
                                     <td>
                                         <button class="btn btn-primary" (click)="onEdit(item)">Edit</button>
-                                        <button class="btn btn-danger" (click)="onDelete(item.departmentId)">Delete</button>
+                                        <app-my-button (onBtnClick)="onDelete(item.departmentId)" [buttonClass]="'btn btn-danger'" [buttonText]="'Delete'"></app-my-button>
+                                        <!-- <button class="btn btn-danger" (click)="onDelete(item.departmentId)">Delete</button> -->
                                     </td>
 
                                 </tr>
